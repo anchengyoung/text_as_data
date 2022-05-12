@@ -1,0 +1,635 @@
+,name,count,label,class
+0,Gretzky,53,hockey,
+1,Blog Post,29,,
+2,@fangraphs,15,baseball,
+3,Clemens,15,baseball,retired
+4,Ovechkin,13,hockey,
+5,Patrick Roy,12,hockey,
+6,Wayne Gretzky,13,hockey,
+7,McDavid,11,hockey,
+8,Mario Lemieux,11,hockey,
+9,Jeter,11,baseball,retired
+10,Jagr,10,hockey,
+11,Mariano Rivera,10,baseball,retired
+12,Johan,10,baseball,retired
+13,Gordie Howe,10,hockey,
+14,Bill,9,,
+15,Roy,9,hockey,
+16,Raines,9,baseball,retired
+17,Rolen,9,baseball,retired
+18,@billjamesonline,8,baseball,
+19,Jacques Plante,8,hockey,
+20,Ruth,8,baseball,retired
+21,Tim Raines,7,baseball,retired
+22,Bobby Orr,7,hockey,
+23,Lemieux,6,hockey,
+24,Crosby,6,hockey,
+25,Jays,6,baseball,
+26,Howe,6,hockey,
+27,Wagner,6,,
+28,Draisaitl,6,hockey,
+29,@ChelseaParlett,6,,
+30,Greinke,5,baseball,active
+31,Ted Williams,5,baseball,retired
+32,Plante,5,hockey,
+33,Lidstrom,5,hockey,
+34,Dennis Martinez,5,baseball,retired
+35,Ohtani,5,baseball,active
+36,Orr,5,hockey,
+37,Castellanos,5,baseball,active
+38,Batman,5,neither,
+39,Keaton,5,neither,
+40,Orel Hershiser,5,baseball,retired
+41,Carpenter,5,baseball,retired
+42,Pedro,5,baseball,retired
+43,Marisnick,4,baseball,active
+44,Guy Lafleur,4,hockey,
+45,Cabrera,4,baseball,active
+46,Stanton,4,baseball,active
+47,Babe Ruth,4,baseball,retired
+48,Koufax,4,baseball,retired
+49,Lindsey,4,baseball,
+50,Jones,4,,
+52,Ortiz,4,baseball,retired
+53,Randy Johnson,4,baseball,retired
+54,Joe,4,,
+55,Billy Wagner,4,baseball,retired
+56,Johan Santana,4,baseball,retired
+57,Schilling,4,baseball,retired
+58,Hank,4,baseball,retired
+59,Pettitte,4,baseball,retired
+60,B. Spider-Man,4,neither,
+61,Wheeler,4,baseball,active
+62,Marchand,3,hockey,
+63,Miguel,3,baseball,active
+64,Mary,3,,
+65,Bedard,3,hockey,
+66,Ichiro,3,baseball,active
+67,Barry Bonds,3,baseball,retired
+68,Vlad,3,baseball,
+69,Deniro,3,neither,
+70,Larry Bird,3,neither,
+71,Scott,3,,
+72,Beltran,3,baseball,retired
+73,AL,3,baseball,
+74,Seinfeld,3,neither,
+75,Ben,3,,
+76,Jackie,3,baseball,retired
+77,Lafleur,3,hockey,
+78,Joker,3,neither,
+79,Michael Jordan,3,neither,
+80,Jordan,3,neither,
+81,Arenado,3,baseball,active
+83,Oswalt,3,baseball,retired
+84,Betts,3,baseball,active
+85,Rickey,3,baseball,retired
+86,Sam,3,,
+87,Nicholson,3,neither,
+88,Hank Aaron,3,baseball,retired
+89,Toews,3,hockey,
+90,Mays,3,baseball,retired
+91,Torts,3,,
+92,Andre Dawson,3,baseball,retired
+93,Dale Murphy,3,baseball,retired
+94,David Cone,3,baseball,retired
+95,Danny,3,,
+96,Bob Gibson,3,baseball,retired
+97,Roy Oswalt,3,baseball,retired
+98,Andy Pettitte,3,baseball,retired
+99,Lester,3,baseball,
+100,Frank Tanana,3,baseball,retired
+101,Dwight Gooden,3,baseball,retired
+102,Mussina,3,baseball,retired
+103,Max,3,baseball,active
+104,Tobey,3,neither,
+105,Wainwright,3,baseball,active
+106,Eovaldi,3,baseball,active
+107,Michael,2,,
+108,Savant,2,baseball,
+109,Mookie Betts,2,baseball,active
+110,Dom,2,,
+111,Alan,2,,
+112,Tyler Wells,2,baseball,active
+113,Bruins,2,hockey,
+114,Matthews,2,hockey,
+115,@STR0,2,baseball,active
+116,McGwire,2,baseball,retired
+117,Auston Matthews,2,hockey,
+118,@cdgoldstein,2,baseball,
+119,Hendricks,2,baseball,active
+120,Jon Gray,2,baseball,active
+121,Gray,2,baseball,active
+122,Matt,2,,
+123,Matt Brash,2,baseball,active
+124,Baseball Savant,2,baseball,
+125,Darvish,2,baseball,active
+126,Seaver,2,baseball,retired
+127,Brett Hull,2,hockey,
+128,Mike Bossy,2,hockey,
+129,Ron Hextall,2,hockey,
+130,Patrick Roy's,2,hockey,
+131,Johnny Gaudreau,2,hockey,
+132,Luis Robert,2,baseball,active
+133,Rob,2,,
+134,Yandle,2,hockey,
+135,Zegras,2,hockey,
+136,@pobguy @PitchingNinja @fangraphs,2,baseball,
+137,Gibson,2,,
+138,Melissa Benoit,2,neither,
+139,Robert,2,,
+140,Musial,2,baseball,retired
+141,Williams,2,baseball,retired
+142,Forsberg,2,hockey,
+143,Shoeless Joe,2,baseball,retired
+144,Rox,2,,
+145,Lebron,2,neither,
+146,Ken Dryden,2,hockey,
+147,Mark Messier,2,hockey,
+148,Wayne,2,,
+149,Fleury,2,hockey,
+150,Tony Esposito,2,hockey,
+151,Simmons,2,baseball,
+152,Zack Snyder Cut,2,neither,
+153,Batman Returns,2,neither,
+154,Pfeiffer,2,,
+155,Devito,2,neither,
+156,Jack,2,,
+157,Robin,2,,
+158,Carrey,2,,
+159,Pattinson,2,neither,
+160,Bourque,2,hockey,
+161,Bobby Hull,2,hockey,
+162,Stewart,2,,
+163,Steve Rogers,2,baseball,retired
+164,Mantle,2,baseball,retired
+165,Lynn,2,baseball,
+166,Bo Jackson,2,baseball,retired
+167,Ray Liotta,2,baseball,
+168,Rick White,2,baseball,retired
+169,Boggs,2,baseball,retired
+170,@FreezeStats,2,,
+171,Kevin Brown,2,baseball,retired
+172,Lincecum,2,baseball,retired
+173,Jon Lester,2,baseball,
+174,Jim Edmonds,2,baseball,retired
+175,Larry Walker,2,baseball,retired
+176,Sosa,2,baseball,retired
+177,Edgar,2,baseball,retired
+178,Jim Thorpe,2,,
+179,Brown,2,,
+180,Javier Vazquez,2,baseball,retired
+181,Koskinen,2,hockey,
+182,Dwight Gooden's,2,baseball,retired
+183,Bret Saberhagen,2,baseball,retired
+185,Appling,2,,
+186,Roger Clemens,2,baseball,retired
+187,Mike Mussina,2,baseball,retired
+188,Pedro Martinez,2,baseball,retired
+189,Homer Simpson,2,neither,
+190,Gil Hodges,2,baseball,retired
+191,Grubauer,2,hockey,
+192,Kris Bryant,2,baseball,active
+193,Giancarlo Stanton,2,baseball,active
+194,Max Scherzer,2,baseball,active
+195,@Fangraphs,2,baseball,
+196,Drai,2,,
+197,Adell,1,baseball,active
+198,Smyly,1,baseball,active
+199,Aaron Judge,1,baseball,active
+200,Adam Duvall,1,baseball,active
+201,Byron Buxton,1,baseball,active
+202,Bunny Larocque,1,hockey,
+203,@spazznolo,1,,
+204,Gary Carter,1,baseball,retired
+205,@travisyost Ding,1,,
+206,@CodifyBaseball Maddux,1,baseball,retired
+207,Dick Tarnstrom,1,hockey,
+208,@JomboyMedia Yankees,1,baseball,
+209,@tennisabstract,1,,
+210,Jose Ramirez,1,baseball,active
+211,Lee Fogolin,1,hockey,
+212,@vovaantonovich,1,,
+213,Arnold Rothstein,1,,
+214,H. Roth,1,,
+215,Marguerite Norris,1,,
+216,Aaron Sorkin,1,baseball,
+217,Steve Zaillian,1,baseball,
+218,Brad Pitt,1,baseball,
+219,Billy Beane,1,baseball,
+220,@ChelseaParlett Ha,1,,
+221,Soto,1,baseball,active
+222,Juan Soto,1,baseball,active
+223,McNeil,1,baseball,active
+224,@tjmaccarone,1,,
+227,Mollweide,1,baseball,
+228,Ted Kennedy,1,hockey,
+229,Auston,1,hockey,
+230,Grossman,1,baseball,active
+231,Sano,1,baseball,active
+232,Ball,1,,
+233,Ron,1,,
+234,Luzardo,1,baseball,active
+235,Jesus Luzardo,1,baseball,active
+236,Dillon Tate,1,baseball,active
+238,@elonmusk,1,neither,
+239,Patrik Stefan,1,hockey,
+240,Freddy Peralta,1,baseball,active
+242,Rick Wise,1,baseball,retired
+243,Carl Pavano,1,baseball,retired
+244,Alou,1,baseball,retired
+245,Astros,1,baseball,
+246,Austin Meadows,1,baseball,active
+247,Meadows,1,baseball,active
+248,Miguel Cabrera,1,baseball,active
+249,Giolito,1,baseball,active
+250,Lucas Giolito,1,baseball,active
+254,Sean Manaea,1,baseball,active
+255,Ian Anderson,1,baseball,active
+256,Placido Polanco,1,baseball,retired
+257,Andre Dawson,1,baseball,retired
+258,Darin Erstad,1,baseball,retired
+259,Brandon Belt,1,baseball,active
+261,Sandoval,1,baseball,active
+262,Kyle Hendricks,1,baseball,active
+263,Bobby Smith,1,hockey,
+264,Burnes,1,baseball,active
+265,xG,1,hockey,
+269,Armando,1,,
+270,David Wells,1,baseball,retired
+271,Max Fried,1,baseball,active
+272,Matt Festa,1,baseball,active
+273,Keith,1,baseball,retired
+274,Venmo,1,neither,
+275,Carey Price,1,hockey,
+276,Ray,1,,
+277,Nik,1,,
+278,Ray Bourque,1,hockey,
+279,Parise,1,hockey,
+280,Zach,1,hockey,
+281,Ripken,1,baseball,retired
+282,Jesse Owens,1,neither,
+283,Stanley Cups,1,hockey,
+284,Messier,1,hockey,
+285,Eric Davis,1,baseball,retired
+286,@SBeaups4 @CanadiensMTL,1,hockey,
+287,Espositos,1,hockey,
+289,Huberdeau,1,hockey,
+290,Lindholm,1,hockey,
+293,Roberts,1,,
+294,Alito,1,neither,
+295,Sotomayor,1,neither,
+296,Kagan,1,neither,
+297,Barrett,1,,
+298,Charlie Morton,1,baseball,active
+299,Joey Votto,1,baseball,active
+301,Wallach,1,,
+302,Larry Parrish,1,baseball,retired
+303,Dave Cash,1,baseball,retired
+304,Doug Flynn,1,baseball,retired
+305,"Raines
+CF",1,baseball,retired
+306,Theo,1,baseball,
+307,Marner,1,hockey,
+309,Billy Hamiltons,1,baseball,
+310,Trevor Zegras,1,hockey,
+314,Ozzie Smith,1,baseball,retired
+315,Tony Gwynn,1,baseball,retired
+316,Stathead,1,,
+317,David Ayres,1,hockey,
+318,Picard,1,neither,
+324,Kyle Gibson,1,baseball,active
+325,Al Pacino,1,neither,
+327,John Tortorella,1,hockey,
+328,Esteban,1,,
+329,@HockeyAbstract,1,hockey,
+330,Steve Smith,1,,
+331,@seidlersburner,1,,
+332,Glenn Hall,1,hockey,
+333,Oshie,1,hockey,
+335,Superman,1,neither,
+336,Vicente,1,,
+337,Et tu Becky?,1,,
+339,Lorenzen,1,baseball,active
+340,Walsh,1,baseball,active
+341,Viggo,1,,
+343,Vince,1,,
+344,Kenny,1,,
+345,Rene Robert,1,hockey,
+346,Bob Caruthers,1,baseball,retired
+347,Tha Maz,1,,
+348,Soh,1,,
+349,@FanOfLaundry,1,,
+350,Mario,1,,
+351,Robinson,1,,
+352,@MattGajtka Top,1,,
+353,Hannibal Lecter,1,neither,
+356,@JomboyMedia,1,,
+357,MacKenzie Scott,1,neither,
+358,Jeff Bezos,1,neither,
+359,steven,1,,
+360,Dodgers,1,baseball,
+361,@Mentoch @pugganoche,1,,
+362,Doug Glanville,1,baseball,retired
+363,@billjamesonline @JPosnanski,1,baseball,
+364,Beliveau,1,,
+365,@dougglanville,1,,
+366,Turner,1,baseball,active
+367,Altuve,1,baseball,active
+368,Devin Williams,1,baseball,active
+369,Dawson,1,baseball,retired
+371,Savant,1,baseball,
+372,Josh,1,,
+373,Sean,1,,
+374,RJ,1,,
+375,Poisson,1,,
+376,Drexler,1,,
+377,Lance Lynn,1,baseball,active
+378,O.P.,1,,
+379,Gretzky,1,hockey,
+381,Norris,1,,
+382,Adams,1,,
+383,North,1,,
+384,@gobungles @onehairman,1,,
+385,Martin Brodeur,1,hockey,
+386,Roberto Luongo,1,hockey,
+387,Andrei Vasilevskiy,1,hockey,
+389,Bobby Bonilla,1,baseball,retired
+390,Mookie,1,baseball,active
+391,Sam Rockwell,1,neither,
+392,Nick,1,,
+393,Peter Bourjos,1,baseball,retired
+394,Bourjos,1,baseball,retired
+396,Billy Hamilton,1,baseball,
+397,Dyson,1,,
+398,Willie Wilson,1,baseball,retired
+399,Oscar,1,,
+401,Britton,1,baseball,active
+402,Kevo,1,,
+403,pre-Marcel,1,,
+404,Esquire,1,,
+405,Carter,1,,
+406,Munson,1,baseball,retired
+407,Dmitri Khristich,1,hockey,
+408,Khristich,1,hockey,
+409,Connor,1,,
+410,Hunter,1,hockey,
+411,Turgeon,1,hockey,
+412,Joaquin Phoenix,1,,
+413,Affleck,1,neither,
+414,Batman v Superman,1,neither,
+415,Jim Carrey,1,neither,
+416,Tommy Lee Jones,1,neither,
+417,Jack Nicholson,1,neither,
+418,Clooney,1,neither,
+419,Arnold Schwarzenegger,1,neither,
+420,Ledger,1,,
+421,Batman Begins,1,neither,
+422,Bale,1,neither,
+423,Tim Thomas,1,hockey,
+424,Colbert,1,neither,
+425,Jimmys,1,neither,
+426,Earvin,1,neither,
+427,Lebron,1,neither,
+428,Larry Bird,1,neither,
+429,Mark Prior,1,baseball,retired
+430,Grady Sizemore,1,baseball,retired
+431,Herb Score,1,,
+432,Sizemore,1,baseball,retired
+433,Charlie Lea,1,baseball,retired
+434,Sciambi,1,baseball,
+435,Larry Bird's,1,neither,
+437,Dave Kingman,1,baseball,retired
+438,Rublev,1,neither,
+439,Denys Molchanov,1,neither,
+440,Eck,1,baseball,retired
+441,Cliff Lee,1,baseball,retired
+442,Dibble,1,baseball,retired
+443,Benitez,1,baseball,retired
+444,Al Leiter,1,baseball,retired
+445,Thome,1,baseball,retired
+446,Manny Ramirez,1,baseball,retired
+447,Derek Jeter's,1,baseball,retired
+448,Livan,1,,
+449,Rey Rey,1,,
+450,Panarin,1,hockey,
+451,Lindsay,1,,
+452,Cam Talbot,1,hockey,
+453,Zach Parise's,1,hockey,
+456,Lafleur/Dionne,1,hockey,
+457,Guy Eddie,1,,
+458,Jarry,1,,
+459,Tom,1,,
+460,Tom Seaver,1,baseball,retired
+461,Tom Scott,1,,
+462,NASL Thompson Usiyan,1,,
+463,Thomas Steen,1,,
+464,Poulin,1,hockey,
+465,@hockey_db,1,hockey,
+466,@AdamBStein Orr,1,,
+467,Espo,1,,
+468,Howie Morenz,1,hockey,
+469,Jean Beliveau,1,hockey,
+470,Doug Harvey,1,hockey,
+471,Eddie Shore,1,hockey,
+472,Ted Lindsay,1,hockey,
+476,Sidney Crosby,1,hockey,
+477,Mark Howe,1,hockey,
+478,Mark,1,,
+479,Hayley Wickenheiser,1,hockey,
+480,Cammi Granato,1,hockey,
+481,Peter Forsberg,1,hockey,
+482,Mariners,1,baseball,
+483,Bean,1,,
+484,Wordle,1,neither,
+485,Mickey Mouse,1,neither,
+486,Abreu,1,baseball,active
+487,@paulstewart22,1,,
+488,Nurse,1,,
+489,Wat dis,1,,
+490,JR Richard,1,baseball,retired
+491,Lefty Grove,1,baseball,retired
+492,Willie Mays,1,baseball,retired
+493,Mr Gilmore,1,,
+494,Emily,1,,
+495,Fisk,1,baseball,retired
+496,Rice,1,,
+497,Sandy Koufax,1,baseball,retired
+498,Uhmmmm,1,,
+499,@JordanPransky @pobguy,1,,
+500,@TheMagnusPI,1,,
+502,@TheBeatwriterMG,1,,
+503,Tom Cruise,1,neither,
+504,the Ray Liotta,1,,
+505,Sheldon,1,,
+506,Charlie,1,,
+507,Kirk Muller,1,hockey,
+508,Petr Svoboda,1,hockey,
+509,Fred McGriff,1,baseball,retired
+510,David E Kelley,1,neither,
+511,Marlee Matlin,1,neither,
+512,Oscar Charleston,1,baseball,retired
+513,Severson,1,hockey,
+517,@TheMagnusPI @infieldflygrl,1,,
+518,Joe Jackson,1,baseball,retired
+519,Satchel Paige,1,baseball,retired
+520,Viggo Mortensen,1,neither,
+522,Nettles,1,,
+523,Allen,1,,
+524,Boyer,1,,
+525,Evans,1,,
+526,Mike,1,,
+528,Keith Hernadez,1,baseball,retired
+529,Trevor Hoffman,1,baseball,retired
+530,Joe Nathan,1,baseball,retired
+531,Pettitte v Buehrle,1,baseball,retired
+533,Brian,1,,
+535,Billy,1,,
+536,Zubov,1,hockey,
+537,Sakic,1,hockey,
+538,Aaron Rodgers,1,neither,
+539,Hossa,1,hockey,
+540,Resch,1,hockey,
+541,Dolph,1,,
+542,Hoffman,1,,
+543,Stephen Bronfman,1,,
+544,Charles,1,,
+545,Jamie Moyer,1,baseball,retired
+546,Moyer,1,baseball,retired
+547,Chris Carpenter,1,baseball,retired
+548,Tim Lincecum,1,baseball,retired
+549,Hunter,1,,
+550,Novak Djokovic,1,neither,
+551,Dale Hawerchuk,1,hockey,
+552,Hawerchuk,1,hockey,
+553,Kovalchuk,1,hockey,
+554,Paul Reiser,1,,
+556,Kramer,1,,
+557,Mick,1,,
+558,Tony Perez,1,baseball,retired
+559,Mark Eichorn,1,baseball,retired
+563,Kirk Gibson,1,baseball,retired
+564,Dennis Eckersley,1,baseball,retired
+565,Gehrig,1,baseball,retired
+566,Costanza,1,,
+568,Roger Federer,1,neither,
+569,Paul McCartney,1,neither,
+570,Beatles v Beach,1,neither,
+571,John Madden,1,neither,
+572,Ferris Bueller,1,neither,
+573,Jackie Chan,1,neither,
+574,Ron Guidry,1,baseball,retired
+575,Santana,1,,
+576,Kenny Lofton,1,baseball,retired
+579,Mariano,1,baseball,retired
+580,Scott Rolen,1,baseball,retired
+582,Medwick,1,baseball,retired
+583,Luis Tiant,1,baseball,retired
+584,Perry,1,baseball,retired
+585,Jenkins,1,baseball,retired
+586,Maury Wills,1,baseball,retired
+587,Aaron,1,,
+588,F Robinson,1,baseball,retired
+589,Eddie Mathews,1,baseball,retired
+590,Robin Roberts,1,baseball,retired
+591,Derek Jeter,1,baseball,retired
+592,Hershiser,1,baseball,retired
+593,Gooden,1,baseball,retired
+594,Schwartz Deli,1,,
+595,David,1,,
+596,Duane Kuiper,1,baseball,retired
+598,Jake Peavy,1,baseball,retired
+599,Mike Scott,1,baseball,retired
+600,Rivera,1,baseball,retired
+601,Hudson,1,baseball,retired
+602,"Nathan 
+
+Oswalt",1,baseball,retired
+603,Spidey,1,,
+604,Bob Errey,1,hockey,
+605,Michael Keaton,1,neither,
+607,Joe D,1,baseball,retired
+608,Greg Maddux,1,baseball,retired
+609,John Smoltz,1,baseball,retired
+610,Tom Glavine,1,baseball,retired
+611,Curt Schilling,1,baseball,retired
+613,Smoltz,1,baseball,retired
+614,Maddux,1,baseball,retired
+615,Josh Brolin's,1,neither,
+616,Doc Ock,1,neither,
+617,Spiderman,1,neither,
+619,ARod,1,baseball,retired
+620,Suarez,1,,
+621,Carew,1,baseball,retired
+622,Edmonds,1,baseball,retired
+623,Doug,1,,
+624,Pete Mahovlich,1,hockey,
+625,Peter,1,,
+626,Jim Rice,1,baseball,retired
+627,Dwight Evans,1,baseball,retired
+628,Dave Parker,1,baseball,retired
+629,Will Clark,1,baseball,retired
+630,Keith Hernandez,1,baseball,retired
+631,Tim Raines,1,baseball,retired
+632,Murphy,1,,
+633,Tommy John,1,baseball,retired
+634,Baines,1,baseball,retired
+635,Hamilton,1,,
+636,Ryan,1,,
+637,Sidney Crosby's,1,hockey,
+638,Steve Garvey,1,baseball,retired
+639,Harris,1,,
+641,Kevin Backman,1,,
+642,Papi,1,baseball,retired
+643,JT,1,,
+644,Lewis,1,,
+645,pre-Jackie,1,,
+646,Tommy Joseph,1,baseball,retired
+647,Tim Wallach,1,baseball,retired
+648,Bill Lee,1,baseball,retired
+649,Boyd,1,,
+650,Lewandowski,1,neither,
+654,Felix,1,baseball,retired
+655,Hamels,1,baseball,retired
+656,"Lester
+
+Others",1,baseball,
+657,Johan,1,baseball,retired
+658,Shin-Soo Choo,1,baseball,retired
+659,Corey Kluber,1,baseball,active
+660,Dave Stieb,1,baseball,retired
+661,Condredge Holloway,1,neither,
+663,Bonnie Bedelia,1,neither,
+664,McCauley Culkin,1,neither,
+665,Holly Gennaro/McClane,1,neither,
+666,Tom / Mysterio,1,neither,
+667,B. Spider-Man 3,1,neither,
+668,Leon Draisaitl,1,hockey,
+669,Hulk Hogan,1,,
+670,Cy Young,1,baseball,retired
+671,youngs Jagr,1,,
+672,DJ,1,,
+673,Pavin Smith,1,baseball,active
+674,Bartolo,1,baseball,retired
+676,Hang Time,1,baseball,
+677,Johnson,1,,
+678,Albert Pujols,1,baseball,active
+679,Scherzer,1,baseball,active
+680,Rodon,1,baseball,active
+681,Spock,1,,
+682,Lloyd Moseby's,1,baseball,retired
+683,ROY,1,,
+684,Rogers,1,,
+685,Randy Arozarena,1,baseball,active
+686,Hath Wins,1,,
+687,Julio Urias,1,baseball,active
+688,Coffey,1,,
+689,McDavid,1,hockey,
+690,Cory Schneider,1,hockey,
+691,Marcel,1,,
+692,Hawk,1,,
+693,Mike Trout,1,baseball,active
+695,Ovi,1,,
+697,Jean Segura,1,baseball,active
+699,Jeff Samardzija,1,baseball,retired
+700,Josh Hader,1,baseball,active
+701,Harold,1,,
