@@ -1,0 +1,390 @@
+---
+title: "Text As Data HW 1"
+author: "Jean An (cya220)"
+date: "2/21/2022"
+output: pdf_document
+header-includes:
+    \usepackage{setspace}
+    \singlespacing
+    \usepackage{titlesec}
+    \titlespacing{\title}{0pt}{\parskip}{-\parskip}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE}
+library(tidyverse)
+library(quanteda)
+library(quanteda.corpora)
+library(quanteda.textstats)
+library(quanteda.textplots)
+```
+# Q1
+\vspace{-5truemm}
+```{r}
+speeches <- corpus_subset(data_corpus_inaugural, President == "Reagan")
+tokenized <- tokens(speeches, remove_punct = TRUE)
+```
+### (a)
+\vspace{-5truemm}
+```{r}
+TTR_calculator <- function(tokens_item) {
+  corpused <- sapply(tokens_item, paste, collapse=" ") %>% corpus()
+  corpus_info <- summary(corpused)
+  corpus_info %>%
+    mutate(TTR = Types / Tokens) %>%
+    select(Text, TTR)
+}
+TTR_calculator(tokenized)
+```
+### (b)
+\vspace{-5truemm}
+```{r}
+reagan_dfm <- dfm(tokenized, tolower = FALSE)
+textstat_simil(reagan_dfm, margin = "documents", method = "cosine")
+```
+The cosine similarity between the two documents is 0.956.
+
+# Q2
+
+(a) I believe the TTR will decrease a little bit, but not much. This is because words with the same stems will now be grouped into the same types, while the number of tokens remains unchanged. The similarity between the two documents should also be relatively unaffected, because stemming the words simply groups more tokens together, and doesn't really create new words.
+
+```{r}
+stemmed_token <- tokens_wordstem(tokenized)
+TTR_calculator(stemmed_token)
+```
+
+```{r}
+stemmed_dfm <- dfm(stemmed_token, tolower = FALSE)
+textstat_simil(stemmed_dfm, margin = "documents", method = "cosine")
+```
+
+(b) I believe the TTR would increase drastically. This is because by removing the stop words, we are removing a large number of tokens (assuming Reagan speaks with lots of stop words like a normal person would) that are grouped into a few types. The similarity between the two documents should greatly decrease, because he likely used similar stop words in both of his speeches, and by removing these a major part of the similarities are discarded.
+
+```{r}
+nostop_token <- tokens_remove(tokenized, pattern = stopwords("en"))
+TTR_calculator(nostop_token)
+```
+
+```{r}
+nostop_dfm <- dfm(nostop_token, tolower = FALSE)
+textstat_simil(nostop_dfm, margin = "documents", method = "cosine")
+```
+
+(c) I believe the TTR would decrease, but only very little. By converting all words to lowercase, the number of tokens remain unchanged, and the only words that are affected and grouped into the same type are likely just words that happen to be the start of sentences and certain proper nouns. The similarity between the two documents would also be largely unaffected, because the words are basically still the same, and in rare occasion a word after being lowercased becomes another word.
+
+```{r}
+lower_token <- tokens_tolower(tokenized)
+TTR_calculator(lower_token)
+```
+
+```{r}
+lower_dfm <- dfm(lower_token, tolower = TRUE)
+textstat_simil(lower_dfm, margin = "documents", method = "cosine")
+```
+
+(d) I think tf-idf makes some sense, but might not be as useful given that our corpus only has two documents. This means that every word Reagan used in both speeches would have a weight of zero, because idf = 0; while every word he used in one speech but not another has idf = 0.69. Therefore, the tf-idf is essentially solely dependent on the tf, and not the idf.
+
+```{r}
+topfeatures(dfm_tfidf(reagan_dfm))
+topfeatures(dfm_tfidf(stemmed_dfm))
+topfeatures(dfm_tfidf(nostop_dfm))
+topfeatures(dfm_tfidf(lower_dfm))
+```
+
+We can see that the terms "nuclear" and "weapons" have the highest weights, which suggest Reagan likely mentioned nuclear weapons many times in one speech and not at all in the other. Interestingly, when stemmed, "weapons" is no longer one of the top features. My guess is that he used "weapons" many times in one speech and mentioned "weapon" (but not "weapons") in the other speech, and once "weapons" is stemmed it becomes the same as "weapon" and received a weight of zero.
+
+# Q3
+\vspace{-5truemm}
+```{r}
+headlines <- c(headline1 = "Nasa Mars rover: Perseverance robot all set for big test.",
+               headline2 = "NASA Lands Its Perseverance Rover on Mars.")
+head_token <- tokens(headlines, remove_punct = TRUE)
+head_dfm <- dfm(head_token, tolower = TRUE)
+```
+In the preprocessing, I chose to remove punctuation and convert all words to lower case. This is because punctuation and capitalization in headlines often times simply reflects the style of editing, rather than provide any useful information.
+
+### (a) Euclidean Distance
+\vspace{-5truemm}
+```{r}
+sqrt(sum((head_dfm[1,] - head_dfm[2,])^2))
+```
+
+### (b) Manhattan Distance
+\vspace{-5truemm}
+```{r}
+sum(abs(head_dfm[1,] - head_dfm[2,]))
+```
+
+### (c) Cosine Similarity
+\vspace{-5truemm}
+```{r}
+product <- sum(head_dfm[1,] * head_dfm[2,])
+norm_1 <- sqrt(sum(head_dfm[1,]^2))
+norm_2 <- sqrt(sum(head_dfm[2,]^2))
+product / (norm_1 * norm_2)
+```
+
+### (d) Levenshtein Distance
+
+The Levenshtein distance is 3. To go from *robot* to *rover*, we have to replace *b* with *r*, replace *o* with *e*, and replace *t* with *r*. That is a total of three operations.
+
+\newpage
+# Q4
+\vspace{-5truemm}
+```{r}
+library(gutenbergr)
+library(stylest)
+set.seed(1984L)
+```
+
+### (a)
+\vspace{-5truemm}
+```{r}
+author_list <- c("Poe, Edgar Allan", "Twain, Mark",
+                 "Shelley, Mary Wollstonecraft","Doyle, Arthur Conan")
+book_list <- c(932,1064,1065,32037,74,76,86,91,84,6447,15238,18247,108,126,139,244)
+
+prepare_dt <- function(book_list, num_lines, removePunct = TRUE){
+     meta <- gutenberg_works(gutenberg_id == book_list)
+     meta <- meta %>% mutate(author = unlist(str_split(author, ","))[1]
+     %>% tolower(.))
+     texts <- lapply(book_list, function(x) gutenberg_download(x,
+     mirror="http://mirrors.xmission.com/gutenberg/") %>%
+                       #select(text) %>%
+                       sample_n(500, replace=TRUE) %>%
+                       unlist() %>%
+                       paste(., collapse = " ") %>%
+                       str_replace_all(., "^ +| +$|( ) +", "\\1"))
+     # remove apostrophes
+     texts <- lapply(texts, function(x) gsub("‘|’", "", x))
+     if(removePunct) texts <- lapply(texts, function(x)
+     gsub("[^[:alpha:]]", " ", x))
+     # remove all non-alpha characters
+     output <- tibble(title = meta$title, author = meta$author, text =
+     unlist(texts, recursive = FALSE))
+}
+texts_dt <- lapply(book_list, prepare_dt, num_lines = 500, removePunct = TRUE)
+```
+
+### (b)
+\vspace{-5truemm}
+```{r}
+texts_dt <- do.call(rbind, texts_dt)
+str(texts_dt)
+```
+
+\newpage
+### (c)
+\vspace{-5truemm}
+```{r}
+stopwords_en <- stopwords("en")
+filter <- corpus::text_filter(drop_punct = TRUE, drop_number = TRUE, drop = stopwords_en)
+vocab_terms <- stylest_select_vocab(texts_dt$text, texts_dt$author,
+                                    filter = filter, smooth = 1, nfold = 5,
+                                    cutoff_pcts = c(25, 50, 75, 99))
+vocab_terms$cutoff_pct_best
+vocab_terms$miss_pct
+```
+
+### (d)
+\vspace{-5truemm}
+```{r}
+vocab_subset <- stylest_terms(texts_dt$text, texts_dt$author,
+                              vocab_terms$cutoff_pct_best , filter = filter)
+style_model <- stylest_fit(texts_dt$text, texts_dt$author,
+                           terms = vocab_subset, filter = filter)
+authors <- unique(texts_dt$author)
+term_usage <- style_model$rate
+lapply(authors, function(x) head(term_usage[x,][order(-term_usage[x,])], 5)) %>%
+  setNames(authors)
+```
+It's hard for me to judge if these terms make sense or not, because I haven't read many of these selected books. However, I know that having the term "tom" in the top-5 for Mark Twain when we included the book *The Adventures of Tom Sawyer* and *Tom Sawyer Abroad* certainly makes sense.
+
+\newpage
+### (e)
+\vspace{-5truemm}
+```{r}
+test <- data.frame(term_usage) %>%
+  filter(rownames(term_usage) %in% c('twain','doyle'))
+rate_ratio <- term_usage['twain',] / term_usage['doyle',]
+head(rate_ratio[order(-rate_ratio)], 5)
+```
+I would interpret this ordering as "Mark Twain used the term 'says' 74 times more than Arthur Conan Doyle; this is the largest ratio for Twain over Doyle." and so on. We also see the terms 'jim' and 'tom', which make sense, because Jim is one of the main characters in *Adventures of Huckleberry Finn*, while Tom is the main character in the two Tom Sawyer books mentioned before.
+
+### (f)
+\vspace{-5truemm}
+```{r}
+mys_file <- "mystery_excerpt.rds"
+mystery_excerpt <- readRDS(mys_file)
+
+pred <- stylest_predict(style_model, mystery_excerpt)
+pred$predicted
+```
+Based on the prediction of the model, Mark Twain is the most likely author of this excerpt.
+
+### (g)
+\vspace{-5truemm}
+```{r}
+texts_tokens <- tokens(texts_dt$text) %>% setNames(texts_dt$title)
+
+texts_lambda <- textstat_collocations(texts_tokens, min_count = 5) %>%
+  arrange(desc(lambda))
+head(texts_lambda, 10)
+```
+\newpage
+```{r}
+texts_count <- textstat_collocations(texts_tokens, min_count = 5) %>%
+  arrange(desc(count))
+head(texts_count, 10)
+```
+
+I don't think any of these sets of bi-grams are multi-word expressions. Most of the ones with a high lambda value are pairs of adverb-verbs or adjective-nouns. All of the ones with a high count are just conjunctions.
+
+# Q5
+\vspace{-5truemm}
+```{r message=FALSE}
+library("sophistication")
+data(data_corpus_ungd2017, package = "quanteda.corpora")
+```
+
+### (a)
+\vspace{-5truemm}
+```{r message=FALSE}
+snippetData <- snippets_make(data_corpus_ungd2017, nsentence = 1, minchar = 150, maxchar = 350)
+snippetData <- snippets_clean(snippetData)
+head(snippetData, 10)
+```
+
+### (b)
+\vspace{-5truemm}
+```{r message=FALSE}
+testData <- sample_n(snippetData, 1000)
+snippetPairsMST <- pairs_regular_make(testData)
+gold_questions <- pairs_gold_make(snippetPairsMST, n.pairs = 10)
+
+print(gold_questions$text1)
+print(gold_questions$text2)
+```
+
+My selections (in order): 2 1 2 1 2 2 1 2 2 2
+
+```{r}
+print(gold_questions$easier_gold)
+```
+
+I was in agreement with the automated classification in nine of the ten gold pairs; the lone disagreement occurred on pair number 6. The difference in judgement likely comes from the fact that text 2 in pair 6 used some proper nouns and was also a longer text, so the classification treated it as harder to read, but I felt like some vocabularies in text 1 in pair 6 was slightly harder to interpret its true meaning.
+
+\newpage
+# Q6
+
+```{r message=FALSE}
+little_women <- tokens(corpus(gutenberg_download(514)), remove_punct = TRUE)
+little_dfm <- dfm(little_women)
+great_gatsby <- tokens(corpus(gutenberg_download(64317)), remove_punct = TRUE)
+great_dfm <- dfm(great_gatsby)
+combined_dfm <- rbind(little_dfm, great_dfm)
+
+plot(log10(1:100), log10(topfeatures(combined_dfm, 100)),
+     xlab = "log10(rank)", ylab = "log10(frequency)",
+     main = "Top 100 Words in Little Women & The Great Gatsby")
+regression <- lm(log10(topfeatures(combined_dfm, 100)) ~ log10(1:100))
+abline(regression, col = "red")
+```
+
+The only preprocessing decision I made is to remove punctuation. I chose not to remove stopwords because I believe stopwords have a smaller impact on texts such as novels, compared to texts such as speeches. Many of the unnecessary stopwords are likely removed in the editing process.
+
+\newpage
+# Q7
+
+```{r}
+num_tokens <- sum(lengths(little_women), lengths(great_gatsby))
+M <- nfeat(combined_dfm)
+k <- 44
+b <- 0.4645909
+k * (num_tokens)^b
+M
+print(b)
+```
+
+No additional preprocessing were done for this question.
+
+\newpage
+# Q8
+\vspace{-5truemm}
+```{r}
+head(kwic(little_women, pattern = "poor*"))
+head(kwic(great_gatsby, pattern = "poor*"))
+```
+```{r}
+head(kwic(little_women, pattern = "rich*", window = 4))
+head(kwic(great_gatsby, pattern = "rich*", window = 4))
+```
+```{r}
+head(kwic(little_women, pattern = "wealth*", window = 4))
+head(kwic(great_gatsby, pattern = "wealth*", window = 3))
+```
+```{r}
+head(kwic(little_women, pattern = "money*", window = 4))
+head(kwic(great_gatsby, pattern = "money*", window = 4))
+```
+
+Based on the Key Words in Context chosen, it seems like *Little Women* discusses the concept of poverty in a more positive way, while *The Great Gatsby* promotes the ideas of being rich and wealthy. It seems like perhaps the two books regard the topic of class from different perspectives, and therefore have different conclusions.
+
+\newpage
+# Q9
+\vspace{-5truemm}
+```{r}
+data("data_corpus_ukmanifestos")
+manifestos <- corpus_subset(data_corpus_ukmanifestos, Party == "Con")
+sent_tokens <- unlist(tokens(manifestos, what = "sentence", include_docvars = TRUE))
+yearnames <- list(unlist(names(sent_tokens)))
+yearnames <- lapply(yearnames[[1]], function(x){strsplit(x, "_")[[1]][3]})
+yearslist <- unlist(yearnames)
+years <- unique(yearslist)
+sentences_df <- tibble(text = sent_tokens, year = yearslist)
+sentences_df <- sentences_df[grepl( ("[\\.\\?\\!]$"), sentences_df$text), ]
+sent_corp <- corpus(sentences_df$text)
+docvars(sent_corp, field = "Year") <- sentences_df$year
+```
+### (a)
+\vspace{-5truemm}
+```{r}
+library(pbapply)
+iters <- 10
+boot_flesch <- function(grouping){
+  N <- nrow(grouping)
+  bootstrap_sample <- corpus_sample(corpus(c(grouping$text)), size = N, replace = TRUE)
+  bootstrap_sample<- as.data.frame(as.matrix(bootstrap_sample))
+  readability_results <- textstat_readability(bootstrap_sample$V1, measure = "Flesch")
+  return(mean(readability_results$Flesch))
+}
+boot_flesch_year <- pblapply(years, function(x){
+  sub_data <- sentences_df %>% filter(year == x)
+  output_flesch <- lapply(1:iters, function(i) boot_flesch(sub_data))
+  return(unlist(output_flesch))})
+year_means <- lapply(boot_flesch_year, mean) %>% unname() %>% unlist()
+year_ses <- lapply(boot_flesch_year, sd) %>% unname() %>% unlist()
+estimates <- data.frame(year = years,
+                        mean = round(year_means, 2),
+                        ses = round(year_ses, 2))
+estimates
+```
+### (b)
+\vspace{-5truemm}
+```{r}
+flesch_score <- sentences_df$text %>%
+  textstat_readability(measure = "Flesch") %>% 
+  group_by(sentences_df$year) %>% 
+  summarise(mean_flesch = round(mean(Flesch), 2)) %>% 
+  setNames(c("year", "mean")) %>% arrange(year) 
+
+estimates %>% select(-ses) %>%
+  left_join(flesch_score, by = "year",
+            suffix = c(".boot",".noboot")) %>%
+  mutate(diff = mean.boot - mean.noboot)
+```
+
+It seems like the difference in mean FRE scores over time with and without bootstrapping estimation is rather similar. I suppose this suggests that the bootstrapping estimate is doing a good job in predicting the FRE scores.
